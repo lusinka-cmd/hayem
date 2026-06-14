@@ -1,74 +1,69 @@
-# Կапер — Հаyakan Connections
+# Հայ եմ (Hayem) — Հայկական Connections
 
-Հаyeren barakhaghаkh, orakarg 4 kategorianеrov.
+> "Ապացուցիր որ հայ ես"
+
+Daily word-category puzzle, NYT Connections-i nman, hayakan content-ov
+(patmutyun, mshakуyt, sфyուrq, homaniшner).
+
+## Status
+
+- [x] Flutter project — game logic, UI, animations, share mechanic
+- [x] Content database — 30 puzzle, 480 bar (1 amisya pilot)
+- [x] CSV → Dart pipeline — content avelacnel/poxel hesht e
+- [x] Git repo — version control setup
+- [ ] Native speaker review (kategoria-ner 16-30-i hamar)
+- [ ] App icon + store assets (Հ + 4x4 grid concept)
+- [ ] iOS/Android build + TestFlight/Internal testing
+- [ ] Apple Developer ($99) + Google Play Console ($25) accounts
+- [ ] Store listing (screenshots, description)
+- [ ] Submit for review
+- [ ] Soft launch — Facebook Armenian groups
+- [ ] ProductHunt launch
 
 ## Project structure
 
 ```
-lib/
-  main.dart              # App entry point + theme
-  models/
-    category.dart        # Category & Puzzle models
-  data/
-    puzzles.dart         # All daily puzzles content
-  screens/
-    game_screen.dart     # Main game UI + logic
-  widgets/
-    tile_widget.dart     # Word tile with animations
-    solved_row_widget.dart
-    lives_widget.dart
-    result_sheet.dart    # End-of-game bottom sheet
+kaper_flutter/
+├── lib/
+│   ├── main.dart              # App entry, theme
+│   ├── models/category.dart   # Puzzle/Category models
+│   ├── data/puzzles.dart       # AUTO-GENERATED — don't edit directly
+│   ├── screens/game_screen.dart
+│   └── widgets/                # Tile, lives, solved row, result sheet
+├── content_pipeline/
+│   ├── puzzles_full.csv        # SOURCE OF TRUTH for content
+│   ├── csv_to_dart.py          # Conversion script
+│   └── README.md
+└── README.md (this file)
 ```
 
-## Setup — 3 qayl
+## Quick start
 
 ```bash
-# 1. Flutter install (https://flutter.dev)
-flutter --version   # piti lini 3.x+
-
-# 2. Dependencies
-cd kaper_flutter
 flutter pub get
-
-# 3a. iOS simulator-um
-open -a Simulator
 flutter run
-
-# 3b. Android emulator-um  
-flutter run
-
-# 3c. Release APK (Android)
-flutter build apk --release
-# Output: build/app/outputs/flutter-apk/app-release.apk
-
-# 3d. Release iOS (macOS + Xcode petq e)
-flutter build ipa --release
 ```
 
-## Content avelacel / poxel
+## Updating content
 
-`lib/data/puzzles.dart` faylum kategorianerı poxel.
-
-Amen Puzzle-i hamar petq e 4 Category:
-- difficulty 0 = hesht (purple)
-- difficulty 1 = mijin (green)  
-- difficulty 2 = dzhvar (amber)
-- difficulty 3 = shat dzhvar (coral)
-
-## Viral share format
-
-Kaperı share anum e sа:
-```
-Կапер #42
-✅ 3/4
-🟪🟩🟧🟨
-🟪🟩🟨🟧
-🟪🟩🟩🟨
-hayakankaper.app
+```bash
+cd content_pipeline
+# edit puzzles_full.csv
+python3 csv_to_dart.py puzzles_full.csv ../lib/data/puzzles.dart
 ```
 
-## Monetization (hajakа roadmap)
+## Monetization (post-pilot)
 
-- Free: 1 puzzle/day
-- Premium ($1.99/month): archive + hints + stats
-- Launch: ProductHunt + Armenian Facebook groups
+Free during pilot — no paywall, no payment infra needed yet.
+
+Post-pilot flow: App Store/Google Play -> Wise (USD) -> Ameriabank (AMD/USD).
+Subscriptions via Paddle (merchant of record, Wise payout).
+
+Setup cost: $99 (Apple Developer/year) + $25 (Google Play, once) = $124.
+
+## Brand
+
+- Name: Հայ եմ (Hayem)
+- Icon: "Հ" letter + 4x4 puzzle-grid background (purple #3C3489)
+- Tagline: "Ապացուցիր որ հայ ես"
+- Share format: emoji grid (🟪🟩🟨🟧), no spoilers
