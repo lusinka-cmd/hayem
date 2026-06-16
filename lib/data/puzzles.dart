@@ -91,7 +91,7 @@ final List<Puzzle> allPuzzles = [
       Category(
         name: 'Հայ նկարիչներ',
         hint: 'Արվեստ',
-        words: ['Սարյան', 'Այվազովսկի', 'Մինաս', 'Ակոպ Ակոպյան'],
+        words: ['Սարյան', 'Այվազովսկի', 'Մինաս', 'Հակոբ Հակոբյան'],
         color: _amberLight,
         textColor: _amber,
         borderColor: _amberBorder,
@@ -506,7 +506,7 @@ final List<Puzzle> allPuzzles = [
       Category(
         name: 'Հայաստանի վանքեր',
         hint: 'Ճարտարապետություն',
-        words: ['Տատև', 'Խոր Վիրապ', 'Նորավանք', 'Որոտնավանք'],
+        words: ['Տաթև', 'Խոր Վիրապ', 'Նորավանք', 'Որոտնավանք'],
         color: _coralLight,
         textColor: _coral,
         borderColor: _coralBorder,
@@ -596,7 +596,7 @@ final List<Puzzle> allPuzzles = [
       Category(
         name: 'Հայկական զարդեր և խորանարդ',
         hint: 'Մշակույթ',
-        words: ['Թիլիսմ', 'Շղթայ', 'Մատանի', 'Ապարանջան'],
+        words: ['Վզնոց', 'Շղթայ', 'Մատանի', 'Ապարանջան'],
         color: _coralLight,
         textColor: _coral,
         borderColor: _coralBorder,
